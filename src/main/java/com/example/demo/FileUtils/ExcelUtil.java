@@ -1,6 +1,6 @@
 package com.example.demo.FileUtils;
 
-import com.example.demo.po.ExcelObject;
+import com.example.demo.FileUtils.po.ExcelObject;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -17,14 +17,15 @@ import java.util.List;
 
 /**
  * excel 操作
+ * 带层级结构
  * Created by cuilb3 on 2017/8/29.
  */
-public class Excel {
+public class ExcelUtil {
 
     public static void main(String[] args) {
         String path = "E:\\k2\\sql\\26305.xlsm";
         try {
-            List<List<String>> result = new Excel().readXlsx(path);
+            List<List<String>> result = new ExcelUtil().readXlsx(path);
             System.out.println(result.size());
             List<ExcelObject> excelObjects = new ArrayList<>();
             for (int i = 0; i < result.size(); i++) {
